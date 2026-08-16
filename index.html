@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Звёздный Рубеж — Космический бой</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="game">
+<canvas id="gameCanvas"></canvas>
+<div class="hud">
+  <div class="hud-group">
+    <div class="stat">Счёт <b id="score">0</b></div>
+    <div class="stat">Рекорд <b id="highScore">0</b></div>
+    <div class="stat">Комбо <b id="combo">x1</b></div>
+    <div class="stat">Прорывы <b id="missed">0</b>/10</div>
+  </div>
+  <div class="hud-group">
+    <div class="stat">Щит <b id="shield">100</b>%</div>
+    <div class="stat">Корпус <b id="health">100</b>%</div>
+    <div class="stat">Спец <b id="special">100</b>%</div>
+    <button class="btn" id="exitBtn">Меню</button>
+  </div>
+</div>
+
+<div id="startScreen" class="overlay">
+ <div class="menu">
+  <h1>ЗВЁЗДНЫЙ РУБЕЖ</h1>
+  <div class="subtitle">Космический бой в духе классической космооперы</div>
+  <div class="menu-grid">
+   <section class="panel">
+    <h3>Сложность</h3><div class="options">
+      <button class="btn active" data-group="difficulty" data-value="easy">Новичок</button>
+      <button class="btn" data-group="difficulty" data-value="normal">Ас</button>
+      <button class="btn" data-group="difficulty" data-value="extreme">Экстрим</button>
+    </div>
+    <p>Сложность влияет на скорость, плотность атак, прочность врагов и частоту боссов.</p>
+   </section>
+   <section class="panel">
+    <h3>Управление</h3>
+    <p><b>WASD / стрелки</b> — движение · <b>Пробел / ЛКМ</b> — огонь · <b>Shift</b> — рывок · <b>E</b> — спецоружие</p>
+    <p>Рывок даёт короткую неуязвимость. Спецоружие выпускает веер мощных болтов.</p>
+   </section>
+   <section class="panel">
+    <h3>Оружие</h3><div class="options">
+      <button class="btn active" data-group="weapon" data-value="double">Двойной огонь</button>
+      <button class="btn" data-group="weapon" data-value="laser">Плазменный луч</button>
+      <button class="btn" data-group="weapon" data-value="spread">Ионный веер</button>
+    </div>
+   </section>
+   <section class="panel">
+    <h3>Зона боя</h3><div class="options">
+      <button class="btn active" data-group="map" data-value="milkyway">Туманность</button>
+      <button class="btn" data-group="map" data-value="earth">Орбита Земли</button>
+      <button class="btn" data-group="map" data-value="deep">Глубокий космос</button>
+    </div>
+   </section>
+   <section class="panel">
+    <h3>Ваш корабль</h3><div class="options">
+      <button class="btn active" data-group="skin" data-value="xwing">Ударный истребитель</button>
+      <button class="btn" data-group="skin" data-value="phantom">Призрачный перехватчик</button>
+      <button class="btn" data-group="skin" data-value="ember">Пепельный клинок</button>
+    </div>
+   </section>
+   <section class="panel">
+    <h3>Аудио</h3><div class="options">
+      <button class="btn active" data-group="music" data-value="industrial">Industrial</button>
+      <button class="btn" data-group="music" data-value="synth">Synth-rock</button>
+      <button class="btn" data-group="music" data-value="silent">Тишина</button>
+    </div>
+   </section>
+  </div>
+  <button class="primary" id="startBtn">В БОЙ</button>
+  <div class="help">Каждый тип противника имеет собственный силуэт и поведение. Модели появляются циклически и не привязаны к одному таймингу. Босс — отдельный тяжёлый корабль.</div>
+ </div>
+</div>
+
+<div id="gameOverScreen" class="overlay hidden">
+ <div class="menu result">
+  <h1 id="gameOverTitle">БОЙ ОКОНЧЕН</h1>
+  <h2 id="gameOverReason"></h2>
+  <p>Счёт: <b id="finalScore">0</b></p><p>Рекорд: <b id="finalHigh">0</b></p>
+  <button class="primary" id="restartBtn">ЕЩЁ РАЗ</button>
+  <button class="btn" id="resultMenu" style="margin-top:10px">В МЕНЮ</button>
+ </div>
+</div>
+
+<script src="js/script.js"></script>
+</body></html>
