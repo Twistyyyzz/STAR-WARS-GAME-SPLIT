@@ -1,0 +1,29 @@
+*{box-sizing:border-box;margin:0;padding:0;user-select:none}
+html,body{width:100%;height:100%;overflow:hidden;background:#02030a;color:#eaf2ff;font-family:Segoe UI,Tahoma,sans-serif}
+.game{position:relative;width:100vw;height:100vh;background:#02030a}
+canvas{width:100%;height:100%;display:block}
+.hud{position:absolute;z-index:5;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;gap:12px;pointer-events:none}
+.hud-group{display:flex;gap:8px;flex-wrap:wrap}
+.stat{background:rgba(5,10,20,.78);border:1px solid rgba(130,180,255,.25);border-radius:12px;padding:7px 11px;font-size:12px;box-shadow:0 0 16px #0008}
+.stat b{color:#ffe81f}
+#exitBtn{pointer-events:auto}
+.overlay{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,rgba(2,4,12,.97),rgba(7,9,22,.94));padding:22px}
+.hidden{display:none!important}
+.menu{width:min(920px,96vw);max-height:94vh;overflow:auto;padding:28px;border:1px solid #ffe81f55;border-radius:22px;background:linear-gradient(145deg,#0a1020ee,#03050dee);box-shadow:0 0 60px #000,0 0 30px #ffe81f18}
+h1{font-size:clamp(28px,5vw,52px);color:#ffe81f;letter-spacing:4px;text-shadow:0 0 18px #ffe81f77;text-align:center}
+.subtitle{text-align:center;color:#9fb0c9;margin:5px 0 22px}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.panel{background:#0d1524cc;border:1px solid #33445f;border-radius:15px;padding:15px}
+.panel h3{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#91a4bf;margin-bottom:10px}
+.panel p{font-size:12px;color:#aebbd0;line-height:1.5;margin-bottom:10px}
+.options{display:flex;flex-wrap:wrap;gap:7px}
+.btn{border:1px solid #3b4c68;background:#152137;color:#dbe7f8;border-radius:9px;padding:9px 12px;cursor:pointer;font-weight:700;font-size:12px;transition:.18s}
+.btn:hover{transform:translateY(-1px);background:#20314d}
+.btn.active{border-color:#ffe81f;color:#ffe81f;background:#ffe81f16;box-shadow:0 0 12px #ffe81f22}
+.primary{display:block;margin:20px auto 0;padding:13px 38px;border-radius:30px;background:#ffe81f;color:#070707;border:0;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 0 24px #ffe81f55}
+.primary:hover{transform:scale(1.03)}
+.help{margin-top:16px;text-align:center;color:#7f91aa;font-size:11px;line-height:1.6}
+.result{text-align:center;max-width:520px}
+.result p{margin:9px 0;color:#bdc9da}
+.result h2{color:#ff6464;margin:8px 0}
+@media(max-width:700px){.menu-grid{grid-template-columns:1fr}.menu{padding:18px}.hud{font-size:10px}.stat{padding:5px 7px}}
